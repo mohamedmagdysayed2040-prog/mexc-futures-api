@@ -1,193 +1,75 @@
-<div align="center">
+<p align="center">
+  <img width="128" height="128" src="https://raw.githubusercontent.com/ritwickdey/vscode-live-server-plus-plus/master/images/vscode-live-server-plus-plus.png">
+</p>
+<h3 align="center">Vscode Live Server++ (BETA) </h3>
+<p align="center">It's Truly Live<p>
 
-# ⚡ MEXC Futures API Bypass
 
-### Trade MEXC Futures even during official API maintenance
-
-## 🌐 [mexc-bypass](https://mexc-demo.fly.dev/)
-
-<br>
-
-[![Live Demo](https://img.shields.io/badge/🔗_Live_Demo-mexc--bypass.com-10B981?style=for-the-badge)](https://mexc-demo.fly.dev/)
-[![Telegram](https://img.shields.io/badge/Telegram-@vecful-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/vecful)
-
-<br>
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![License](https://img.shields.io/badge/license-proprietary-red)
-
-</div>
+[![VSCode Marketplace](https://img.shields.io/vscode-marketplace/v/ritwickdey.vscode-live-server-plus-plus.svg?style=flat-square&label=vscode%20marketplace)](https://marketplace.visualstudio.com/items?itemName=ritwickdey.vscode-live-server-plus-plus) [![Total Installs](https://img.shields.io/vscode-marketplace/d/ritwickdey.vscode-live-server-plus-plus.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=ritwickdey.vscode-live-server-plus-plus) [![Avarage Rating](https://img.shields.io/vscode-marketplace/r/ritwickdey.vscode-live-server-plus-plus.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=ritwickdey.vscode-live-server-plus-plus) [![Travis branch](https://img.shields.io/travis/com/ritwickdey/vscode-live-server-plus-plus/master.svg?style=flat-square&label=travis%20branch)](https://travis-ci.com/ritwickdey/vscode-live-server-plus-plus) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ritwickdey/vscode-live-server-plus-plus/)
 
 ---
 
-## 🎯 What is this?
+![VSCode Live Server++](./images/vscode-live-server-plus-plus_preview1.gif)
 
-This API bypasses MEXC's [Under Maintenance](https://mexcdevelop.github.io/apidocs/contract_v1_en/#order-under-maintenance) restrictions, allowing you to create orders, manage positions, and trade futures even when the official API is blocked.
+---
+## Features
 
-**Try it out:** [https://mexc-demo.fly.dev/](https://mexc-demo.fly.dev/)
+- **No Need to save HTML, CSS, JS** :smile:
+- **No Browser full reload** (for HTML & CSS)
+- Customizable Server Root
+- Customizable Server Port
+- Customizable reloading time
+- Customizable index file (e.g `index.html`)
+- Auto Browser open (Mozila, Chrome & Edge)
+- Control from statusbar
 
 ---
 
-## ✨ Features
+## Downside
 
-| Feature                    | Description                                               |
-| -------------------------- | --------------------------------------------------------- |
-| ⚡ **Fast**                | 200-300ms response times *(you can get it under <100ms given the right region)*                                |
-| 🔐 **Direct Connection**   | No third-party requests — communicates directly with MEXC |
-| 🌐 **Mainnet & Testnet**   | Works on both environments                                |
-| ⌨️ **TypeScript & Python** | Fully typed libraries available                           |
-| 📦 **Postman Collection**  | Ready-to-use API collection included                      |
+- `Live Server++` will work well if your project only contents `css` & `html` and minimal `JavaScript`. If you do lot of DOM Manupulation with JavaScript, `Live Server++` is not recommended.
 
----
+--- 
+## How to Start/Stop Server ?
 
-## 💳 Pricing
+1. Open a project and click to `Go Live++` from the status bar to turn the server on/off.
 
-| Product                                    | Price          | Description                                                 |
-| ------------------------------------------ | -------------- | ----------------------------------------------------------- |
-| 💾 **Futures API SDK**                     | $120           | Full source code for futures order management               |
-| 💾 **Spot API SDK**                        | $120           | Full source code. Create orders for newly listed spot coins |
-| 🪞 **Multi-Account Copy Bot**              | $400           | Mirror trades across multiple accounts                      |
-| 🪞 **Multi-Account Copy Bot Subscription** | Coming soon... | Mirror trades across multiple accounts                      |
-| ✈️ **Signal Trading Bot**                  | Custom         | Auto-copy trades from Telegram signals                      |
-| 🔍 **OCR Trading Bot**                     | Custom         | Read signals from screenshots or messages                   |
-
-**Payment:** USDT, USDC
-
-📬 **[Contact on Telegram →](https://t.me/vecful)**
+2. Open the Command Pallete by pressing `F1` or `ctrl+shift+P` and type `Live Server++: Open Server` to start a server or type `Live Server++: Close Server` to stop a server.
 
 ---
 
-## 🔓 Bypassed Endpoints
+## Settings
 
-### Order Management
+[Click here to read settings Docs](./docs/settings.md).
 
-| Method | Endpoint                              | Status          |
-| ------ | ------------------------------------- | --------------- |
-| POST   | `/private/order/create`               | 🔓 **Bypassed** |
-| POST   | `/private/order/cancel`               | 🔓 **Bypassed** |
-| POST   | `/private/order/cancel_with_external` | 🔓 **Bypassed** |
-| POST   | `/private/order/cancel_all`           | 🔓 **Bypassed** |
+## What's new ?
 
-### Trigger Orders (Plan Orders)
-
-| Method | Endpoint                        | Status          |
-| ------ | ------------------------------- | --------------- |
-| POST   | `/private/planorder/place`      | 🔓 **Bypassed** |
-| POST   | `/private/planorder/cancel`     | 🔓 **Bypassed** |
-| POST   | `/private/planorder/cancel_all` | 🔓 **Bypassed** |
-
-### Stop Limit Orders
-
-| Method | Endpoint                               | Status          |
-| ------ | -------------------------------------- | --------------- |
-| POST   | `/private/stoporder/cancel`            | 🔓 **Bypassed** |
-| POST   | `/private/stoporder/cancel_all`        | 🔓 **Bypassed** |
-| POST   | `/private/stoporder/change_price`      | 🔓 **Bypassed** |
-| POST   | `/private/stoporder/change_plan_price` | 🔓 **Bypassed** |
-
-### Position Management
-
-| Method | Endpoint                                 | Status          |
-| ------ | ---------------------------------------- | --------------- |
-| POST   | `/private/position/change_margin`        | 🔓 **Bypassed** |
-| POST   | `/private/position/change_leverage`      | 🔓 **Bypassed** |
-| POST   | `/private/position/change_position_mode` | 🔓 **Bypassed** |
+- ### v0.0.1 (##DATE##)
+  - Initial release
+  - hot Reload supported
+  - No need to save
+  - 5 settings are added (Port, Root, indexFile, timeout, browser)
 
 ---
 
-## ✅ Available Endpoints
+## Changelog
 
-### Account
-
-| Method | Endpoint                            | Description          |
-| ------ | ----------------------------------- | -------------------- |
-| GET    | `/private/account/assets`           | Get all user assets  |
-| GET    | `/private/account/asset/{currency}` | Get specific asset   |
-| GET    | `/private/account/transfer_record`  | Get transfer records |
-| GET    | `/private/account/risk_limit`       | Get risk limits      |
-| GET    | `/private/account/tiered_fee_rate`  | Get trading fee info |
-
-### Position
-
-| Method | Endpoint                                   | Description              |
-| ------ | ------------------------------------------ | ------------------------ |
-| GET    | `/private/position/list/history_positions` | Get historical positions |
-| GET    | `/private/position/open_positions`         | Get open positions       |
-| GET    | `/private/position/funding_records`        | Get funding records      |
-| GET    | `/private/position/leverage`               | Get leverage settings    |
-| GET    | `/private/position/position_mode`          | Get position mode        |
-
-### Orders
-
-| Method | Endpoint                                 | Description                |
-| ------ | ---------------------------------------- | -------------------------- |
-| GET    | `/private/order/list/open_orders`        | Get pending orders         |
-| GET    | `/private/order/list/history_orders`     | Get historical orders      |
-| GET    | `/private/order/external/{symbol}/{oid}` | Get order by external ID   |
-| GET    | `/private/order/get/{order_id}`          | Get order by ID            |
-| GET    | `/private/order/batch_query`             | Get orders by IDs          |
-| GET    | `/private/order/deal_details/{order_id}` | Get order transactions     |
-| GET    | `/private/order/list/order_deals`        | Get transactions by symbol |
-
-### Trigger Orders (Plan Orders)
-
-| Method | Endpoint                         | Description        |
-| ------ | -------------------------------- | ------------------ |
-| GET    | `/private/planorder/list/orders` | Get trigger orders |
-
-### Stop Limit Orders
-
-| Method | Endpoint                         | Description           |
-| ------ | -------------------------------- | --------------------- |
-| GET    | `/private/stoporder/list/orders` | Get stop limit orders |
+To check full changelog [click here](CHANGELOG.md).
 
 ---
 
-## 🚀 Quick Start
+## Why `Live Server++` when there is a `Live Server` ?
 
-### TypeScript
+Actually, I was receiving a lot of emails, PR, comments (and also there was few issue request, e.g. [#12080](https://github.com/Microsoft/vscode/issues/12080)) - `why auto reload only happens when we save the file`? - `why it's not realtime?`... blah blah....
 
-```typescript
-import { MexcFutureAPI } from "./mexc";
-import { OrderSide } from "./mexcTypes";
+Well, in Live Server Extension, I'm using a popular npm module (named `live-server`) and it's the core library of Live Server. _(yaa! too many "Live Server" 😜)_. In the way it's working - it never possible auto reload without saving the file.
 
-async function main() {
-  const key = "your key";
-  const api = new MexcFutureAPI(key);
-  await api.createMarketOrder("BTC_USDT", OrderSide.OpenLong, 1000, 20);
-}
+And yaa, to be honest, when I made (in mid of `2017`) the live server extension, I didn't know Node.js or JavaScript well _(Hold on! I still don't know `Node.js` but I'm now confident)_. I even didn't know `promise`/`callback` well. I understood the `callback` _(& `callback hell` too)_ while making the extension. And `Promise`? Only I knew how to use it like `.then().then().then()` and `IIFE`? or `closure`? - I didn't even hear about those names at that time. 😬
 
-main();
-```
-
-### Python
-
-```python
-import asyncio
-from mexcpy.mexcTypes import OrderSide
-from mexcpy.api import MexcFuturesAPI
-
-async def main():
-    key = 'your key'
-    api = MexcFuturesAPI(key)
-    await api.create_market_order("BTC_USDT", OrderSide.OpenLong, 1000, 20)
-
-asyncio.run(main())
-```
+Okay, now coming to the point, Code of the `Live Server` can't be migrated with `Live Server++`. `Live Server++` is not depended on `live-server`(the npm module) - I've written the server side code from scratch & it has minimal dependency (still under development).
 
 ---
 
-## 🔗 Links
+## LICENSE
 
-- 🌐 **Website:** [https://mexc-demo.fly.dev/](https://mexc-demo.fly.dev/)
-- 💬 **Telegram:** [@vecful](https://t.me/vecful)
-- 📈 **Spot API:** [mexc-spot-bypass](https://github.com/vecful/mexc-spot-bypass)
-
----
-
-<div align="center">
-
-**[🌐 https://mexc-demo.fly.dev/](https://mexc-demo.fly.dev/)** · **[💬 @vecful](https://t.me/vecful)**
-
-</div>
+This extension is licensed under the [MIT License](LICENSE)
